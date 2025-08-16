@@ -1,4 +1,7 @@
 
+.env
+.user.yml
+local_profile/
 target/
 dbt_packages/
 logs/
