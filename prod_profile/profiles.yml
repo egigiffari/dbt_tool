@@ -1,0 +1,24 @@
+dbt_demo:
+  target: "{{ env_var('DBT_TARGET') }}"
+  outputs:
+    dev:
+      type: mysql
+      threads: "{{ env_var('DBT_THREADS') }}"
+      host: "{{ env_var('DBT_DEV_HOST') }}"
+      port: "{{ env_var('DBT_DEV_PORT') }}"
+      schema: "{{ env_var('DBT_DEV_SCHEMA') }}"
+      database: "{{ env_var('DBT_DEV_DATABASE') }}"
+      username: "{{ env_var('DBT_DEV_USER') }}"
+      password: "{{ env_var('DBT_DEV_PASS') }}"
+      driver: MySQL ODBC 8.0 ANSI Driver
+
+    prod:
+      type: mysql
+      threads: "{{ env_var('DBT_THREADS') }}"
+      host: "{{ env_var('DBT_PROD_HOST') }}"
+      port: "{{ env_var('DBT_PROD_PORT') }}"
+      username: "{{ env_var('DBT_PROD_USER') }}"
+      password: "{{ env_var('DBT_PROD_PASS') }}"
+      database: "{{ env_var('DBT_PROD_DATABASE') }}"
+      schema: "{{ env_var('DBT_PROD_SCHEMA') }}"
+      driver: MySQL ODBC 8.0 ANSI Driver
